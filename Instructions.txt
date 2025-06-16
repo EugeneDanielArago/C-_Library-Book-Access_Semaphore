@@ -1,0 +1,9 @@
+Problem 1: Library Book Access
+
+A university library has 5 copies of a popular book. Students arrive and request to borrow one copy. If no copies are available, they must wait until someone returns one.
+
+Task: Model this scenario using semaphores.
+Guide Questions:
+  1. What initial value should the semaphore have?
+  2. How do you represent borrowing and returning a book?
+  3. Write C++ for the borrowBook() and returnBook() functions.
