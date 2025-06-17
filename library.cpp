@@ -8,10 +8,8 @@
 
 using namespace std;
 
-
 counting_semaphore<5> sem(5);
 mutex mtx;
-
 
 void borrow_book(const string& student_id);
 void return_book(const string& student_id);
@@ -93,14 +91,12 @@ void simulateStudent(int studentId) {
     }
 }
 
-
-
 int main() {
     int choice;
     string student_id;
 
     while (true) {
-        cout << "----------------------------\n";
+        cout << "\n----------------------------\n";
         cout << "    Library Book Access";
         cout << "\n----------------------------\n";
         cout << "1. Borrow a Book Manually\n";
@@ -112,15 +108,17 @@ int main() {
 
         switch (choice) {
             case 1: 
-                cout << "Enter Student ID: ";
+                cout << "Enter Student ID to borrow a book: ";
                 cin >> student_id;
                 thread(borrow_book, student_id).detach();
+                this_thread::sleep_for(chrono::milliseconds(300));
                 break;
 
             case 2: 
-                cout << "Enter Student ID: ";
+                cout << "Enter Student ID to return a book: ";
                 cin >> student_id;
                 thread(return_book, student_id).detach();
+                this_thread::sleep_for(chrono::milliseconds(300)); 
                 break;
 
             case 3: 
