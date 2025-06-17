@@ -38,7 +38,7 @@ void return_book(const string& student_id) {
 
 // Automated simulation function
 void automatedSimulation() {
-    const int totalStudents = 8;
+    const int totalStudents = 5;
     thread students[totalStudents];
 
     mtx.lock();
